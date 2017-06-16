@@ -60,7 +60,7 @@ body {
 }
 
 .box p {
-  max-width: 960px; margin-left:auto; margin-right:auto;font-family:Bitter;line-height: 1.5em;padding-left: 30px; padding-right: 30px;
+  max-width: 900px; margin-left:auto; margin-right:auto;font-family:Bitter;line-height: 1.5em;padding-left: 30px; padding-right: 30px;
 }
 
 .transition-box {
@@ -74,7 +74,7 @@ body {
 }
 
 .content p {
-  max-width: 960px; margin-left:auto; margin-right:auto;font-family:Bitter;line-height: 1.5em;padding-left: 30px; padding-right: 30px;
+  max-width: 900px; margin-left:auto; margin-right:auto;font-family:Bitter;line-height: 1.5em;padding-left: 30px; padding-right: 30px;
 }
 
 .content {
