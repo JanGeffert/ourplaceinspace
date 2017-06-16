@@ -5,8 +5,55 @@
   <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
   <title>Our Place in Space</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+    var angle = 0;
+var radius = 200;
+var earthSize = 50;
+var sunSize = 0.8 * earthSize;
+
+function drawEarthCenter() {
+  var canvas = document.getElementById('earthCenter');
+  var ctx = canvas.getContext('2d');
+  
+  // clear canvas
+  ctx.clearRect(0, 0, 500, 500);
+  
+  // draw orbit outline (circle)
+  ctx.beginPath();
+  ctx.strokeStyle = 'rgb(96, 62, 33)';
+  ctx.setLineDash([10]);
+  ctx.setLineWidth(2);
+  ctx.arc(250, 250, radius, 0, 2 * Math.PI);
+  ctx.stroke();
+  
+  // draw earth
+  ctx.save();
+  ctx.beginPath();
+  ctx.fillStyle = 'rgb(126, 147, 172)';
+  ctx.strokeStyle = 'rgb(96, 62, 33)';
+  ctx.setLineDash([]);
+  ctx.setLineWidth(4);
+  ctx.arc(250, 250, earthSize, 0, 2 * Math.PI);
+  ctx.fill();
+  // ctx.stroke();
+  ctx.restore();
+  
+  ctx.save();
+  ctx.translate(250, 250);
+  ctx.rotate(angle);
+  ctx.beginPath();
+  ctx.fillStyle = '#FF9900';
+  ctx.arc(radius, 0, sunSize, 0, 2 * Math.PI);
+  ctx.fill();
+  ctx.globalAlpha=1;
+  ctx.restore();
+  
+  angle += 0.01;
+  window.requestAnimationFrame(drawEarthCenter);
+}
+  </script>
 </head>
-<body>
+<body onload="drawEarthCenter();">
 
   <div class="parallax-container">
     <div class="parallax-layer layer-0" data-parallax-speed="0.05" data-max-scroll="565">
@@ -45,6 +92,9 @@ text-transform: uppercase;font-family: Bitter;color: #FFF; padding-left: 30px; p
   <p>Fast forward a few days. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that repeat over a certain period!</p>
   <p>What you observe is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.</p><div class="transition-box"></div><div class="content"><p style="margin-top:0px;">Fast forward a few days. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that repeat over a certain period!</p>
     <p>What you observe is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.</p>
+    <p style="text-align: center;">
+        <canvas id="earthCenter" width="500" height="500" style="margin-left:auto; margin-right:auto;text-align:center;"></canvas>
+    </p>
   </div>
 
   </div>
