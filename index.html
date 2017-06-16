@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
   <title>Our Place in Space</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bigfoot-default.css">
   <script type="text/javascript">
     var angle = 0;
 var radius = 200;
@@ -52,8 +53,16 @@ function drawEarthCenter() {
   window.requestAnimationFrame(drawEarthCenter);
 }
   </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/bigfoot.min.js"></script>
+
 </head>
 <body onload="drawEarthCenter();">
+
+
+
+
 
   <div class="parallax-container">
     <div class="parallax-layer layer-0" data-parallax-speed="0.05" data-max-scroll="565">
@@ -69,11 +78,11 @@ function drawEarthCenter() {
     <div class="parallax-layer layer-1" data-parallax-speed="0.1" data-max-scroll="565">
       
     <div style="text-align:center; position: absolute;width: 100%;top:-80px;">
-      <h1 style="font-size: 3.5em;
+      <h1 style="font-size: 3.2em;
 line-height: 1em;
 font-weight: bold;
 text-transform: uppercase;font-family: Bitter;color: #FFF; padding-left: 30px; padding-right: 30px;max-width:350px;position:relative;margin-left:auto;margin-right:auto;">Our Place in Space</h1>
-      <p style="font-size: 20px;font-family: Bitter;color: #FFF; padding-left: 30px; padding-right: 30px; max-width:500px; text-align:center;margin-left:auto;margin-right:auto;">The story of how we found our place in the universe and learned even more about it in the process.</p>
+      <p style="font-family: Bitter;color: #FFF; padding-left: 30px; padding-right: 30px; max-width:500px; text-align:center;margin-left:auto;margin-right:auto;">The story of how we found our place in the universe and learned even more about it in the process.</p>
     </div>
 
     </div>
@@ -83,25 +92,93 @@ text-transform: uppercase;font-family: Bitter;color: #FFF; padding-left: 30px; p
     <div class="parallax-layer layer-5" data-parallax-speed="1" data-max-scroll="565"></div>
   </div>
 
+
+
   <div class="box">
-    
   <p class="time">200,000 years ago</p>
 <p>Imagine you are the first human on earth — and therefore the first human to look up after dusk. With your bare eyes, you can observe the myriads of little dots of light appearing each night. You see what we now call the moon, and during the day, you would notice the trace of the sun.
 </p>
 <!--p><img src="moon.jpg" style="width: 100%;height: auto;max-width: 100%;"></p-->
   <p>Fast forward a few weeks. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that you observe which repeat over a certain time period!</p>
-  <p>What you see is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.</p><div class="transition-box"></div><div class="content"><p style="margin-top:0px;">Fast forward a few days. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that repeat over a certain period!</p>
-    <p>What you observe is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.</p>
-    <p style="text-align: center;">
+  <p>What you see is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p><div class="transition-box"></div><div class="content">
+<p class="time" style="margin-top:0px;">4,000 years ago</p>
+
+<p>The Babylonians, <a href="https://en.wikipedia.org/wiki/Babylonia">an ancient people from the Near East</a>, pick up where you left off. They start to meticulously record the position of particular celestial bodies on clay tables.</p>
+
+<p><img src="cuneiform.jpg" style="width: 100%;"/>This is such a <span style="font-style: italic;">cuneiform</span> tablet. We have only been able to decipher these as of 200 years ago!</p>
+
+<p class="time">3,000 years ago</p>
+
+<p>Even you, the first human on earth, lacking any sophisticated tools to record your observations, notice that some of the bright spots in the sky differ from the rest. They do not twinkle, as do all the other stars, nor are they fixed with respect to the stars. The Ancient Greeks called these "wanderers", plan&#x113;tai (&#x3C0;&#x3BB;&#x3B1;&#x3BD;&#x1FC6;&#x3C4;&#x3B1;&#x3B9;), the planets.</p>
+
+<p>As humans, we are inclined to find patterns. Planetary motion, however, turned out to be much harder to predict than the motion of the sun and moon. Look, for instance, <a href="http://twanight.org/newTWAN/photos.asp?ID=3003742">at Mars, as seen from Earth:</a></p>
+
+<p>
+<img src="mars.gif" style="width: 100%;"/>
+</p>
+
+<p><span style="font-style: italic;">These pictures were taken every 5 (or sometimes 6) days from 10/28/2011 until 07/06/2012</span>.</p>
+
+<p>Mars appears to slow down and to temporarily reverse its direction. This movement is called <span style="font-style: italic;"><a href="https://www.youtube.com/watch?v=FtV0PV9MF88">retrograde motion</a></span> and it has puzzled astronomers for centuries. Assuming that the Earth was standing still at the center of the universe, they thought about various ways to explain it, starting out with simple geometric shapes.</p>
+<p>One of the earliest models, which the ancient Greeks developed, posits that the sun moves around the earth with uniform speed.<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+<p style="text-align: center;">
         <canvas id="earthCenter" width="500" height="500" style="margin-left:auto; margin-right:auto;text-align:center;"></canvas>
     </p>
+<p>Yet, this model does not even sufficiently explain something as simple as the seasons. Why are the winter months shorter than the summer ones? One possible fix that a scientist named Hipparchus came up with: moving the earth <span style="font-style: italic;">away</span> from the center of the orbit.</p>
+
+<p style="text-align: center;"><canvas id="diagram2" width="300" height="300"></canvas></p>
+
+<p>But what about retrograde motion? Just putting Mars on another orbit similar to the one of the sun would not exhibit the behavior observed in nature. Therefore, the Greeks introduced a second class of orbits, so-called <span style="font-style: italic;">epicycles</span>. As you can see below, each planet has a secondary orbit on a circle whose center itself is on an orbit around earth.</p>
+
+<p style="text-align: center;"><canvas id="diagram3" width="300" height="300"></canvas></p>
+
+<p>Now we can see, how &mdash; viewed from earth &mdash; retrograde motion appears as a visual artifact. The predictions of the model, however, still did not agree with the actual times and durations of the observed retrograde motion. This led the Greek scientist Ptolemy to further complicate the mechanism of epicycles, by adding another adjustment, the equant. You can learn more about it <a href="https://en.wikipedia.org/wiki/Equant">here.</a></p>
+
+<p><img src="ptolemy.png" style="width: 100%;"/></p>
+
+<p>The image above shows his predictions (the straigt lines) as well as the actual observed positions for Mars. As you can see, they are quite accurate. Indeed, Ptolemy's model remained state-of-the art for more than 1500 years...</p>
+
+<p class="time">400 years ago</p>
+
+<p>Enter Nicolaus Copernicus. The Polish astronomer had a revolutionary idea. In his major work <span style="font-style: italic;"><a href="http://ads.harvard.edu/books/1543droc.book/">De Revolutionibus Orbium Coelestium</a></span>, he centered the orbits of all planets around the sun! This broke with the assumption that the earth was not moving and in the middle of all planetary motion. On a more philosophical level, it made the earth a celestial body just like any other, a controversial step that angered his employer &mdash; the catholic church.</p>
+<p><img src="copernicus_neg.jpg" style="width: 100%;"/>
+While having about the same predictory power as Ptolemy's model, Copernicus' model is much closer to what we know about the universe today than any of the ones proposed by his predecessors. With further tweaking, and measurements &mdash; carried out by Tycho Brahe and systematized by his now more famous assistant <a href="https://en.wikipedia.org/wiki/Johannes_Kepler">Johannes Kepler</a> &mdash; we have arrived at our current understanding of our place in the universe.</p>
+<p class="time">Today</p>
+<p>As you have seen, the scientific method is an ever-evolving process: We observe the physical world around us, develop theories to predict it, test those theories and revise them if necessary in light of new evidence. Step by step, we inch closer to the truth. Maybe you can be the one who makes the next improvement, adding to all of human knowledge!</p>
+
+<div class="footnotes"><ol>
+    <li class="footnote" id="fn:1">
+        <p>Interestingly, the concept of the week has no astronomical origin.<a href="#fnref:1" title="return to article"> ↩</a><p>
+    </li>
+    <li class="footnote" id="fn:2">
+        <p>This was an Aristotelian ideal.<a href="#fnref:2" title="return to article"> ↩</a><p>
+    </li>
+</ol></div>
+
+<p><br /></p>
+<p style="color: #CCCCCC;">Image credits:<br />
+<a href="https://www.videvo.net/video/starry-night-timelapse/3954/
+">Opening timelapse</a> |
+<a href="https://commons.wikimedia.org/wiki/File:At_Shoshone_California_(8645184128).jpg
+">Moon</a> |
+<a href="https://commons.wikimedia.org/wiki/File:Cuneiform_inscriptions,_Stela_of_Iddi-Sin,_king_of_Simurrum..JPG
+">Cuneiform</a> |
+<a href="http://www.twanight.org/newTWAN/photos.asp?ID=3003742">Retrograde movement imagery of mars</a> |
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations">Inspiration for orbital animations</a> |
+Ptolemy's prediction: SCIPHUNV 22 Chapter 3 |
+<a href="https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium#/media/File:De_Revolutionibus_manuscript_p9b.jpg">Copernicus Manuscript</a>
+</p>
+<p><br /></p>
+<p class="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+
   </div>
 
   </div>
-  <!-- <div class="transition-box"></div> -->
-
 
   <script src="parallax.js"></script>
-
+<script type="text/javascript">
+    $.bigfoot();
+</script>
 </body>
 </html>
