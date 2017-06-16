@@ -51,17 +51,43 @@ body {
     background-image: url('5.png');
   }
 
-  
-.content {
+.box {
   position: absolute;
   top: 600px;
-  background: #2A122A;
+  width: 100%;
+  background-color: #2A122A;
+  color: #FFFFFF;
+}
+
+.box p {
+  max-width: 960px; margin-left:auto; margin-right:auto;font-family:Bitter;line-height: 1.5em;padding-left: 30px; padding-right: 30px;
+}
+
+.transition-box {
+  height: 200px;
+  width: 100%;
+  background: linear-gradient(#2A122A, rgb(249, 243, 232));
+}
+
+.time {
+  max-width: 900px; margin-left:auto; margin-right:auto;font-family:Bitter;line-height: 1.5em;margin-top:50px;padding-left: 30px; padding-right: 30px;text-align:center;
+}
+
+.content p {
+  max-width: 960px; margin-left:auto; margin-right:auto;font-family:Bitter;line-height: 1.5em;padding-left: 30px; padding-right: 30px;
+}
+
+.content {
+  position: relative;
+  background: rgb(249, 243, 232);
+  color: rgb(96, 62, 33);
   width: 100%;
   min-height: 1500px;
 }
-  .content h1 {
-    color: #fff;
-    font-size: 2em;
-    text-transform: uppercase;
-    text-align: center;
-  }
+
+.content h1 {
+  color: #fff;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+}
