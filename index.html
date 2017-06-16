@@ -8,8 +8,8 @@
   <script type="text/javascript">
     var angle = 0;
 var radius = 200;
-var earthSize = 50;
-var sunSize = 0.8 * earthSize;
+var earthSize = 40;
+var sunSize = 0.9 * earthSize;
 
 function drawEarthCenter() {
   var canvas = document.getElementById('earthCenter');
@@ -22,7 +22,7 @@ function drawEarthCenter() {
   ctx.beginPath();
   ctx.strokeStyle = 'rgb(96, 62, 33)';
   ctx.setLineDash([10]);
-  ctx.setLineWidth(2);
+  ctx.lineWidth = 2;
   ctx.arc(250, 250, radius, 0, 2 * Math.PI);
   ctx.stroke();
   
@@ -32,7 +32,7 @@ function drawEarthCenter() {
   ctx.fillStyle = 'rgb(126, 147, 172)';
   ctx.strokeStyle = 'rgb(96, 62, 33)';
   ctx.setLineDash([]);
-  ctx.setLineWidth(4);
+  ctx.lineWidth = 4;
   ctx.arc(250, 250, earthSize, 0, 2 * Math.PI);
   ctx.fill();
   // ctx.stroke();
@@ -86,11 +86,11 @@ text-transform: uppercase;font-family: Bitter;color: #FFF; padding-left: 30px; p
   <div class="box">
     
   <p class="time">200,000 years ago</p>
-<p>Imagine you are the first human on earth — and therefore the first human to look up after dusk. With bare eyes, you can observe the myriads of little dots of light appearing each night. You see what we now call the moon, and during the day, you would notice the movement of the sun.
+<p>Imagine you are the first human on earth — and therefore the first human to look up after dusk. With your bare eyes, you can observe the myriads of little dots of light appearing each night. You see what we now call the moon, and during the day, you would notice the trace of the sun.
 </p>
 <!--p><img src="moon.jpg" style="width: 100%;height: auto;max-width: 100%;"></p-->
-  <p>Fast forward a few days. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that repeat over a certain period!</p>
-  <p>What you observe is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.</p><div class="transition-box"></div><div class="content"><p style="margin-top:0px;">Fast forward a few days. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that repeat over a certain period!</p>
+  <p>Fast forward a few weeks. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that you observe which repeat over a certain time period!</p>
+  <p>What you see is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.</p><div class="transition-box"></div><div class="content"><p style="margin-top:0px;">Fast forward a few days. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that repeat over a certain period!</p>
     <p>What you observe is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.</p>
     <p style="text-align: center;">
         <canvas id="earthCenter" width="500" height="500" style="margin-left:auto; margin-right:auto;text-align:center;"></canvas>
