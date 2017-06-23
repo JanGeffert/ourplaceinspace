@@ -14,7 +14,7 @@ var planets = [
         'distance': 0,
         'orbitalPeriod': 0,
         'color': 'rgb(126, 147, 172)',
-        'size': 30,
+        'radius': 30,
         'symbol': '♁'
     },
     {
@@ -22,7 +22,7 @@ var planets = [
         'distance': 60,
         'orbitalPeriod': 0.1,
         'color': '#FF9900',
-        'size': 10,
+        'radius': 10,
         'symbol': '☽'
     },
         {
@@ -30,47 +30,47 @@ var planets = [
         'distance': 80,
         'orbitalPeriod': 0.24,
         'color': '#FF9900',
-        'size': 10,
+        'radius': 10,
         'symbol': '☿'
     },
         {
         'name': 'venus',
-        'distance': 100,
+        'distance': 110,
         'orbitalPeriod': 0.62,
         'color': '#FF9900',
-        'size': 10,
+        'radius': 10,
         'symbol': '☉'
     },
         {
         'name': 'sun',
-        'distance': 120,
+        'distance': 140,
         'orbitalPeriod': 1,
         'color': '#FF9900',
-        'size': 10,
+        'radius': 10,
         'symbol': '☉'
     },
         {
         'name': 'mars',
-        'distance': 140,
+        'distance': 170,
         'orbitalPeriod': 1.88,
         'color': '#FF9900',
-        'size': 10,
+        'radius': 10,
         'symbol': '♂'
     },
         {
         'name': 'jupiter',
-        'distance': 160,
+        'distance': 200,
         'orbitalPeriod': 11.86,
         'color': '#FF9900',
-        'size': 10,
+        'radius': 10,
         'symbol': '♃'
     },
     {
         'name': 'saturn',
-        'distance': 180,
+        'distance': 240,
         'orbitalPeriod': 29.46,
         'color': '#FF9900',
-        'size': 10,
+        'radius': 10,
         'symbol': '♄'
     }
  ];
@@ -79,9 +79,6 @@ var globalOrbitalPeriod = 365;
 var clockSpeed = 0.5;
 
 var time = 0;
-var radius = 200;
-var earthSize = 50;
-var sunSize = 0.8 * earthSize;
 
 function drawEarthCenter() {
   var canvas = document.getElementById('earthCenter');
@@ -106,7 +103,7 @@ function drawEarthCenter() {
     // ctx.fillText(planets[i].symbol, 0, 0);
     ctx.beginPath();
     ctx.fillStyle = planets[i].color;
-    ctx.arc(planets[i].distance, 0, planets[i].size, 0, 2 * Math.PI);
+    ctx.arc(planets[i].distance, 0, planets[i].radius, 0, 2 * Math.PI);
     ctx.fill();
     ctx.globalAlpha=1;
     ctx.restore();
