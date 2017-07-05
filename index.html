@@ -14,69 +14,69 @@ var planets = [
         'distance': 0,
         'orbitalPeriod': 0,
         'color': 'rgb(126, 147, 172)',
-        'radius': 30,
+        'radius': 25,
         'symbol': '♁'
     },
     {
         'name': 'moon',
-        'distance': 60,
+        'distance': 50,
         'orbitalPeriod': 0.1,
-        'color': '#FF9900',
+        'color': 'rgb(169,169,169)',
         'radius': 10,
         'symbol': '☽'
     },
-        {
+    {
         'name': 'mercury',
         'distance': 80,
         'orbitalPeriod': 0.24,
-        'color': '#FF9900',
+        'color': 'rgb(255,0,0)',
         'radius': 10,
         'symbol': '☿'
     },
-        {
+    {
         'name': 'venus',
         'distance': 110,
         'orbitalPeriod': 0.62,
-        'color': '#FF9900',
+        'color': 'rgb(139,125,130)',
         'radius': 10,
         'symbol': '☉'
     },
-        {
+    {
         'name': 'sun',
         'distance': 140,
         'orbitalPeriod': 1,
-        'color': '#FF9900',
+        'color': 'rgb(253,184,19)',
         'radius': 10,
         'symbol': '☉'
     },
-        {
+    {
         'name': 'mars',
         'distance': 170,
         'orbitalPeriod': 1.88,
-        'color': '#FF9900',
+        'color': 'rgb(193,68,14)',
         'radius': 10,
         'symbol': '♂'
     },
-        {
+    {
         'name': 'jupiter',
         'distance': 200,
         'orbitalPeriod': 11.86,
-        'color': '#FF9900',
+        'color': 'rgb(235,243,246)',
         'radius': 10,
         'symbol': '♃'
     },
     {
         'name': 'saturn',
-        'distance': 240,
+        'distance': 230,
         'orbitalPeriod': 29.46,
-        'color': '#FF9900',
+        'color': 'rgb(206,184,184)',
         'radius': 10,
         'symbol': '♄'
     }
  ];
 
 var globalOrbitalPeriod = 365;
-var clockSpeed = 0.5;
+var clockSpeed = 0.3;
 
 var time = 0;
 
@@ -91,7 +91,7 @@ function drawEarthCenter() {
     ctx.globalAlpha=0.2;
     ctx.beginPath();
     ctx.strokeStyle = 'rgb(96, 62, 33)';
-    ctx.setLineDash([10]);
+    ctx.setLineDash([6]);
     ctx.setLineWidth(2);
     ctx.arc(250, 250, planets[i].distance, 0, 2 * Math.PI);
     ctx.stroke();
@@ -100,11 +100,13 @@ function drawEarthCenter() {
     ctx.save();
     ctx.translate(250, 250);
     ctx.rotate(((2 * Math.PI)/globalOrbitalPeriod) * time / planets[i].orbitalPeriod);
-    // ctx.fillText(planets[i].symbol, 0, 0);
     ctx.beginPath();
     ctx.fillStyle = planets[i].color;
     ctx.arc(planets[i].distance, 0, planets[i].radius, 0, 2 * Math.PI);
     ctx.fill();
+    ctx.fillStyle = 'rgb(0,0,0)';
+    ctx.font="18px Georgia";
+    ctx.fillText(planets[i].symbol, planets[i].distance-6, 0);
     ctx.globalAlpha=1;
     ctx.restore();
   }
@@ -161,7 +163,7 @@ text-transform: uppercase;font-family: Bitter;color: #FFF; padding-left: 30px; p
 </p>
 <!--p><img src="moon.jpg" style="width: 100%;height: auto;max-width: 100%;"></p-->
   <p>Fast forward a few weeks. You would find out that the stars move! Not with respect to each other, but with respect to your viewpoint. Each night's sky looks a little bit different from the one preceding it. In fact, there are patterns that you observe which repeat over a certain time period!</p>
-  <p>What you see is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p><div class="transition-box"></div><div class="content">
+  <p>What you see is not only beautiful. It also helps you in practical ways: You start using the sky as a clock to find the best time to hunt or to plant crops. You invent calendars, defining the <span style="font-style: italic;">year</span> as the time it takes for the sun's positional pattern to repeat and the <span style="font-style: italic;">month</span> as the duration of the cycle of the moon.<span style="color:rgb(96, 62, 33);"><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p></span><div class="transition-box"></div><div class="content">
 <p class="time" style="margin-top:0px;">4,000 years ago</p>
 
 <p>The Babylonians, <a href="https://en.wikipedia.org/wiki/Babylonia">an ancient people from the Near East</a>, pick up where you left off. They start to meticulously record the position of particular celestial bodies on clay tables.</p>
@@ -172,7 +174,12 @@ text-transform: uppercase;font-family: Bitter;color: #FFF; padding-left: 30px; p
 
 <p>Even you, the first human on earth, lacking any sophisticated tools to record your observations, notice that some of the bright spots in the sky differ from the rest. They do not twinkle, as do all the other stars, nor are they fixed with respect to the stars. The Ancient Greeks called these "wanderers", plan&#x113;tai (&#x3C0;&#x3BB;&#x3B1;&#x3BD;&#x1FC6;&#x3C4;&#x3B1;&#x3B9;), the planets.</p>
 
-<p>As humans, we are inclined to find patterns. Planetary motion, however, turned out to be much harder to predict than the motion of the sun and moon. Look, for instance, <a href="http://twanight.org/newTWAN/photos.asp?ID=3003742">at Mars, as seen from Earth:</a></p>
+<p>As humans, we are inclined to find patterns. One of the earliest models, which the ancient Greeks developed, posits that the sun moves around the earth with uniform speed.<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+<p style="text-align: center;">
+        <canvas id="earthCenter" width="500" height="500" style="margin-left:auto; margin-right:auto;text-align:center;width:100%;"></canvas>
+    </p>
+
+<p>Planetary motion, however, turned out to be much harder to predict than the motion of the sun and moon. Look, for instance, <a href="http://twanight.org/newTWAN/photos.asp?ID=3003742">at Mars, as seen from Earth:</a></p>
 
 <p>
 <img src="mars.gif" style="width: 100%;"/>
@@ -181,10 +188,7 @@ text-transform: uppercase;font-family: Bitter;color: #FFF; padding-left: 30px; p
 <p><span style="font-style: italic;">These pictures were taken every 5 (or sometimes 6) days from 10/28/2011 until 07/06/2012</span>.</p>
 
 <p>Mars appears to slow down and to temporarily reverse its direction. This movement is called <span style="font-style: italic;"><a href="https://www.youtube.com/watch?v=FtV0PV9MF88">retrograde motion</a></span> and it has puzzled astronomers for centuries. Assuming that the Earth was standing still at the center of the universe, they thought about various ways to explain it, starting out with simple geometric shapes.</p>
-<p>One of the earliest models, which the ancient Greeks developed, posits that the sun moves around the earth with uniform speed.<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
-<p style="text-align: center;">
-        <canvas id="earthCenter" width="500" height="500" style="margin-left:auto; margin-right:auto;text-align:center;width:100%;"></canvas>
-    </p>
+
 <p>Yet, this model does not even sufficiently explain something as simple as the seasons. Why are the winter months shorter than the summer ones? One possible fix that a scientist named Hipparchus came up with: moving the earth <span style="font-style: italic;">away</span> from the center of the orbit.</p>
 
 <p style="text-align: center;"><canvas id="diagram2" width="300" height="300"></canvas></p>
@@ -209,7 +213,7 @@ While having about the same predictory power as Ptolemy's model, Copernicus' mod
 
 <div class="footnotes"><ol>
     <li class="footnote" id="fn:1">
-        <p>Interestingly, the concept of the week has no astronomical origin.<a href="#fnref:1" title="return to article"> ↩</a><p>
+        <p>Interestingly, the concept of the week has no direct astronomical origin.<a href="#fnref:1" title="return to article"> ↩</a><p>
     </li>
     <li class="footnote" id="fn:2">
         <p>This was an Aristotelian ideal.<a href="#fnref:2" title="return to article"> ↩</a><p>
