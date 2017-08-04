@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Planets Canvas Element</title>
+</head>
+<style type="text/css">
+	canvas {  background-color: rgb(249, 243, 232);}
+</style>
+<body onload="drawEarthCenter();">
+  <script type="text/javascript">
+	var planets = [
+	  {
+        'name': 'Earth',
+        'distance': 0,
+        'orbitalPeriod': 0,
+        'color': 'rgb(126, 147, 172)',
+        'size': 30,
+        'symbol': '♁'
+    },
+    {
+        'name': 'moon',
+        'distance': 60,
+        'orbitalPeriod': 0.1,
+        'color': '#FF9900',
+        'size': 10,
+        'symbol': '☉'
+    },
+        {
+        'name': 'mercury',
+        'distance': 80,
+        'orbitalPeriod': 0.24,
+        'color': '#FF9900',
+        'size': 10,
+        'symbol': '☉'
+    },
+        {
+        'name': 'venus',
+        'distance': 100,
+        'orbitalPeriod': 0.62,
+        'color': '#FF9900',
+        'size': 10,
+        'symbol': '☉'
+    },
+        {
+        'name': 'sun',
+        'distance': 120,
+        'orbitalPeriod': 1,
+        'color': '#FF9900',
+        'size': 10,
+        'symbol': '☉'
+    },
+        {
+        'name': 'mars',
+        'distance': 140,
+        'orbitalPeriod': 1.88,
+        'color': '#FF9900',
+        'size': 10,
+        'symbol': '☉'
+    },
+        {
+        'name': 'jupiter',
+        'distance': 160,
+        'orbitalPeriod': 11.86,
+        'color': '#FF9900',
+        'size': 10,
+        'symbol': '☉'
+    },
+    {
+        'name': 'saturn',
+        'distance': 180,
+        'orbitalPeriod': 29.46,
+        'color': '#FF9900',
+        'size': 10,
+        'symbol': '☉'
+    }
+ ];
+
+var globalOrbitalPeriod = 365;
+var clockSpeed = 0.5;
+
+var time = 0;
+var radius = 200;
+var earthSize = 50;
+var sunSize = 0.8 * earthSize;
+
+function drawEarthCenter() {
+  var canvas = document.getElementById('earthCenter');
+  var ctx = canvas.getContext('2d');
+  
+  // clear canvas
+  ctx.clearRect(0, 0, 500, 500);
+
+	for (var i = 0;i<planets.length;i++) {
+		ctx.globalAlpha=0.2;
+  	ctx.beginPath();
+  	ctx.strokeStyle = 'rgb(96, 62, 33)';
+  	ctx.setLineDash([10]);
+  	ctx.setLineWidth(2);
+  	ctx.arc(250, 250, planets[i].distance, 0, 2 * Math.PI);
+  	ctx.stroke();
+  	ctx.globalAlpha=1;
+
+  	ctx.save();
+  	ctx.translate(250, 250);
+  	ctx.rotate(((2 * Math.PI)/globalOrbitalPeriod) * time / planets[i].orbitalPeriod);
+  	// ctx.fillText(planets[i].symbol, 0, 0);
+  	ctx.beginPath();
+  	ctx.fillStyle = planets[i].color;
+  	ctx.arc(planets[i].distance, 0, planets[i].size, 0, 2 * Math.PI);
+  	ctx.fill();
+  	ctx.globalAlpha=1;
+  	ctx.restore();
+	}
+  
+  time += clockSpeed;
+  console.log(time);
+  window.requestAnimationFrame(drawEarthCenter);
+}
+	</script>
+</body>
+</html>
